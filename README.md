@@ -1,9 +1,9 @@
 # Rubik's Cube Solver
-
+𒅒𒈔𒅒𒇫𒄆
 A Rubik’s Cube solver written in Python with two solving strategies:
 - **Layer-by-Layer (LBL) Method** — educational, human-style solving.
 - **Bidirectional BFS Optimized Solver** — faster, algorithmic solving using search.
-
+𒅒𒈔𒅒𒇫𒄆
 ---
 
 ## Gallery
