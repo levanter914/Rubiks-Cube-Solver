@@ -1,5 +1,5 @@
 from collections import deque
-from optimal_cube import OptimalCube
+from optimized_solver.optimal_cube import OptimalCube
 
 def invert_moves(sequence):
     """Invert a move sequence, e.g. 'R U'' -> 'U R''."""

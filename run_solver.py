@@ -3,11 +3,11 @@ from rich.console import Console
 from rich.prompt import Prompt
 from rich.table import Table
 from rich import box
-import cube
-import solver
-import optimize
-import optimal_solver
-from optimal_cube import OptimalCube
+import lbl_solver.cube as cube
+import lbl_solver.solver as solver
+import lbl_solver.optimize as optimize
+import optimized_solver.optimal_solver as optimal_solver
+from optimized_solver.optimal_cube import OptimalCube
 from colorama import Fore, Style
 
 console = Console()
@@ -26,18 +26,26 @@ def translate_scramble(scramble):
     return " ".join(translated_moves)
 
 def print_cube(cube_obj):
-    # Print cube using rich markup colors
+    # Print cube using Rich markup (assumes cube_obj.get_facelets_2d exists)
     colors = {
-        'W': "[white]W[/]",
-        'Y': "[yellow]Y[/]",
-        'G': "[green]G[/]",
-        'B': "[blue]B[/]",
-        'R': "[red]R[/]",
-        'O': "[orange]O[/]"
+        'W': '[white]W[/white]',
+        'Y': '[yellow]Y[/yellow]',
+        'G': '[green]G[/green]',
+        'B': '[blue]B[/blue]',
+        'R': '[red]R[/red]',
+        'O': '[orange1]O[/orange1]',
+        ' ': ' '
     }
-    stringified = str(cube_obj)
-    visual = "".join(colors.get(c, c) for c in stringified)
-    console.print(visual)
+
+    if hasattr(cube_obj, "get_facelets_2d"):
+        lines = cube_obj.get_facelets_2d()
+    else:
+        # Fallback to basic str() for other Cube types
+        lines = str(cube_obj).splitlines()
+
+    for line in lines:
+        visual_line = "".join(colors.get(c, c) for c in line)
+        console.print(visual_line, markup=True)
 
 def colorize(c):
     # Terminal background color for facelets

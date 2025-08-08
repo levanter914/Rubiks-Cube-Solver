@@ -34,6 +34,21 @@ class OptimalCube:
             f"         {c(s[48])} {c(s[49])} {c(s[50])}",
             f"         {c(s[51])} {c(s[52])} {c(s[53])}",
         ])
+        
+    def get_facelets_2d(self):
+        """Return a list of 9 strings representing the cube layout in 2D without ANSI codes."""
+        s = self.state
+        return [
+            f"         {s[0]} {s[1]} {s[2]}",
+            f"         {s[3]} {s[4]} {s[5]}",
+            f"         {s[6]} {s[7]} {s[8]}",
+            f"{s[9]} {s[10]} {s[11]}   {s[18]} {s[19]} {s[20]}   {s[27]} {s[28]} {s[29]}   {s[36]} {s[37]} {s[38]}",
+            f"{s[12]} {s[13]} {s[14]}   {s[21]} {s[22]} {s[23]}   {s[30]} {s[31]} {s[32]}   {s[39]} {s[40]} {s[41]}",
+            f"{s[15]} {s[16]} {s[17]}   {s[24]} {s[25]} {s[26]}   {s[33]} {s[34]} {s[35]}   {s[42]} {s[43]} {s[44]}",
+            f"         {s[45]} {s[46]} {s[47]}",
+            f"         {s[48]} {s[49]} {s[50]}",
+            f"         {s[51]} {s[52]} {s[53]}",
+        ]
 
     def _apply_permutation(self, permutation):
         s = self.state

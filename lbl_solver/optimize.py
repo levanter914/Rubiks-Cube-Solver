@@ -1,4 +1,4 @@
-import cube
+import lbl_solver.cube as cube
 
 def optimize_moves(moves):
     def invert_move(move):

@@ -1,5 +1,5 @@
-import cube
-from maths import Point
+import lbl_solver.cube as cube
+from lbl_solver.maths import Point
 from colorama import Fore, Style
 
 DEBUG = False
