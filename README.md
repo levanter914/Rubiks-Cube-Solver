@@ -6,6 +6,11 @@ A Rubik’s Cube solver written in Python with two solving strategies:
 
 ---
 
+## Gallery
+
+![BIDIRECTIONAL BFS OUTPUT](output-BFS.png)
+![LEVEL-BY-LEVEL OUTPUT](output-LBL.png)
+
 ## Project Structure
 
 ```
